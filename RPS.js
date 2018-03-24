@@ -1,5 +1,11 @@
 //Javascript file for Rock Paper Scissors
 function computerPlay (){
-  return  Math.floor(Math.random () * 3);
+  let random = Math.floor(Math.random() * 3);
+  if(random === 0){
+    return "rock"
+  } else if (random === 1){
+    return "paper"
+  } else {
+    return "scissors"
+  }
 }
-computerPlay ();
