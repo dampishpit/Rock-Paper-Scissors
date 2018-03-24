@@ -9,3 +9,19 @@ function computerPlay (){
     return "scissors"
   }
 }
+
+let playerSelection;
+let computerSelction;
+
+function winner (playerSelection, computerSelection){
+  if ('rock', 'paper'){
+    return "You lose Paper beats Rock" //This works but not the parts below.
+  } if ('paper', 'rock'){
+    return "You win! Paper beats Rock"
+  } else if ('paper', 'Scissors'){
+    return "You lose! Scissors beats paper"
+  }
+
+}
+
+winner ('paper', 'scissors');
