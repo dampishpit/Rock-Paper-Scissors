@@ -16,21 +16,51 @@ function computerPlay (){
 
 function playRound (playerSelection, computerSelection){
   if (playerSelection.toLowerCase() === 'rock' && computerSelection === 'paper'){
-    return ["You lose! Paper beats rock."];
+    return ["You lose!"];
   } else if (playerSelection.toLowerCase() === 'paper' && computerSelection === 'rock'){
-    return ["You win! Paper beats rock."];
+    return ["You win!"];
   } else if (playerSelection.toLowerCase() === 'paper' && computerSelection === 'scissors'){
-    return ["You lose! Scissors beats paper"];
+    return ["You lose!"];
   } else if (playerSelection.toLowerCase() === 'scissors' && computerSelection === 'paper'){
-    return ["You win! Scissors beats paper."];
+    return ["You win!"];
   } else if (playerSelection.toLowerCase() === 'scissors' && computerSelection === 'rock'){
-    return ["You lose! Rock beats scissors"];
+    return ["You lose!"];
   } else if (playerSelection.toLowerCase() === 'rock' && computerSelection === 'scissors'){
-    return ["You win! Rock beats scissors."];
-  } else {
-    return "It's a draw!"
+    return ["You win!"];
+  } else if (playerSelection.toLowerCase() === 'rock' && computerSelection === 'rock'){
+    return ["It's a draw"];
+  } else if (playerSelection.toLowerCase() === 'scissors' && computerSelection === 'scissors'){
+    return ["It's a draw"];
+  } else if (playerSelection.toLowerCase() === 'paper' && computerSelection === 'paper'){
+    return ["It's a draw"];
   }
 }
 
-const playerSelection = 'rock';
-const computerSelection = computerPlay();
+//Function that creates a game of 5 rounds and displays the winner at the end.
+//The game stops automatically if a player wins 3 rounds.
+
+function game(){
+    let playerScore = 0;
+    let computerScore = 0;
+
+    for (let i = 0; i < 6; i++){
+      let playerSelection = prompt ('rock, paper or scissors?');
+      let result = playRound (playerSelection, computerPlay ());
+
+      if (result = "You win!"){
+        playerScore ++;
+      } else if (result = "You lose!"){
+        computerScore ++;
+      }
+
+      console.log("You: " + playerScore + " " + "Computer: " + computerScore);
+
+      if (playerScore == 3) {
+        return "You win the game!";
+      } else if (computerScore == 3) {
+        return "You lose the game!";
+      } else if (playerScore == computerScore) {
+        return "Tie game!";
+      }
+    }
+  }
