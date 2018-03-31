@@ -45,12 +45,15 @@ function game(){
 
     for (let i = 0; i < 6; i++){
       let playerSelection = prompt ('rock, paper or scissors?');
-      let result = playRound (playerSelection, computerPlay ());
+      let computerSelection = computerPlay ();
+      let results = playRound (playerSelection, computerSelection);
 
-      if (result = "You win!"){
-        playerScore ++;
-      } else if (result = "You lose!"){
-        computerScore ++;
+      console.log (results)
+
+      if (results == "You win!"){
+        playerScore++;
+      } else if (results == "You lose!"){
+        computerScore++;
       }
 
       console.log("You: " + playerScore + " " + "Computer: " + computerScore);
