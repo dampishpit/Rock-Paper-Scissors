@@ -12,23 +12,25 @@ function computerPlay (){
   }
 }
 
-//Function that creates a single game of Rock Paper Scissors.
+//Function that creates a single game of Rock Paper Scissors and is case insensitive..
 
 function playRound (playerSelection, computerSelection){
-  if (playerSelection === 'rock' && computerSelection === 'paper'){
+  if (playerSelection.toLowerCase() === 'rock' && computerSelection === 'paper'){
     return ["You lose! Paper beats rock."];
-  } else if (playerSelection === 'paper' && computerSelection === 'rock'){
+  } else if (playerSelection.toLowerCase() === 'paper' && computerSelection === 'rock'){
     return ["You win! Paper beats rock."];
-  } else if (playerSelection === 'paper' && computerSelection === 'scissors'){
+  } else if (playerSelection.toLowerCase() === 'paper' && computerSelection === 'scissors'){
     return ["You lose! Scissors beats paper"];
-  } else if (playerSelection === 'scissors' && computerSelection === 'paper'){
+  } else if (playerSelection.toLowerCase() === 'scissors' && computerSelection === 'paper'){
     return ["You win! Scissors beats paper."];
-  } else if (playerSelection === 'scissors' && computerSelection === 'rock'){
+  } else if (playerSelection.toLowerCase() === 'scissors' && computerSelection === 'rock'){
     return ["You lose! Rock beats scissors"];
-  } else if (playerSelection === 'rock' && computerSelection === 'scissors'){
+  } else if (playerSelection.toLowerCase() === 'rock' && computerSelection === 'scissors'){
     return ["You win! Rock beats scissors."];
+  } else {
+    return "It's a draw!"
   }
 }
 
-const playerSelection = 'rock'
-const computerSelection = computerPlay()
+const playerSelection = 'rock';
+const computerSelection = computerPlay();
