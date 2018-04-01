@@ -37,24 +37,33 @@ function playRound (playerSelection, computerSelection){
 }
 
 //Function that creates a game of 5 rounds and displays the winner at the end.
-//The game stops automatically if a player wins 3 rounds.
 
 function game(){
     let playerScore = 0;
     let computerScore = 0;
 
-    for (let i = 0; i < 6; i++){
-      let playerSelection = prompt ('rock, paper or scissors?');
-      let computerSelection = computerPlay ();
+    for (let i = 0; i < 5; i++){
+      const playerSelection = prompt ('rock, paper or scissors?');
+      const computerSelection = computerPlay ();
       let results = playRound (playerSelection, computerSelection);
-      console.log (results);
-
-      if (results == "You win!"){
-        playerScore++;
-      } else if (results == "You lose!"){
-        computerScore++;
+      console.log(`Computer played "${computerSelection}"`);
+      const consoleOutput = playRound(playerSelection,computerSelection);
+      console.log(consoleOutput);
+      if(consoleOutput.includes("win", 4)){
+        ++playerScore;
+      }else{
+        ++computerScore;
       }
-
+    }
+    if(playerScore<computerScore){
+      console.log("You lose the game.");
+    }else if(playerScore>computerScore){
+      console.log("You win the game!");
+    }else{
+      console.log("You are tied.");
+    }
+  }
+  game();
       console.log("You: " + playerScore + " " + "Computer: " + computerScore);
 
       if (playerScore == 3) {
@@ -66,4 +75,4 @@ function game(){
       }
     }
   }
-game ();
+console.log(game ());
