@@ -47,8 +47,7 @@ function game(){
       let playerSelection = prompt ('rock, paper or scissors?');
       let computerSelection = computerPlay ();
       let results = playRound (playerSelection, computerSelection);
-
-      console.log (results)
+      console.log (results);
 
       if (results == "You win!"){
         playerScore++;
@@ -67,3 +66,4 @@ function game(){
       }
     }
   }
+game ();
